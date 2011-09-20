@@ -19,7 +19,7 @@ LICENSE
  * ns_crypt.c   CDDL
    This file came from:
    http://src.opensolaris.org/source/xref/onnv/onnv-gate/usr/src/lib/libsldap/common/
- * ns_crypt_r.h BSD License
+ * ns_crypt_r.c BSD License
    The reentrant version that under development that will replace ns_crypt.c
 
 AUTHER
