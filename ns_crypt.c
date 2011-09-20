@@ -27,7 +27,9 @@
 /*	Copyright (c) 1984, 1986, 1987, 1988, 1989 AT&T	*/
 /*	  All Rights Reserved	*/
 
-#pragma ident	"%Z%%M%	%I%	%E% SMI"
+/*
+ * Copyright (C) 2011 Tsukasa Hamano <hamano@osstech.co.jp>
+ */
 
 #include <stdlib.h>
 #include <string.h>
@@ -115,9 +117,8 @@ ascii2hex(char *anHexaStr, int *aResLen)
 }
 /* EXPORT DELETE END */
 
-
 static void
-c_setup()
+c_setup(void)
 {
 /* EXPORT DELETE START */
 	int ic, i, k, temp;
@@ -125,9 +126,7 @@ c_setup()
 	char buf[13];
 	int seed;
 
-	//(void) mutex_lock(&ns_crypt_lock);
 	if (crypt_inited) {
-		//(void) mutex_unlock(&ns_crypt_lock);
 		return;
 	}
 
@@ -160,7 +159,6 @@ c_setup()
 	for (i = 0; i < ROTORSIZE; i++)
 		t2[t1[i]&MASK] = i;
 	crypt_inited = B_TRUE;
-//	(void) mutex_unlock(&ns_crypt_lock);
 }
 
 

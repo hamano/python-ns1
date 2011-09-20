@@ -251,7 +251,7 @@ typedef union {
 #define	NS_CACHE_CREDERROR 	-2
 #define	NS_CACHE_SERVERERROR 	-3
 #define	NS_CACHE_NOSERVER 	-4
-
+/*
 int
 __ns_ldap_trydoorcall(ldap_data_t **dptr, int *ndata, int *adata);
 int
@@ -260,7 +260,7 @@ int
 __ns_ldap_trydoorcall_send(ldap_data_t **dptr, int *ndata, int *adata);
 void
 __ns_ldap_doorfd_close();
-
+*/
 #ifdef	__cplusplus
 }
 #endif

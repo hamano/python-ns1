@@ -1,11 +1,38 @@
-#include <Python.h>
+/*
+ * CDDL HEADER START
+ *
+ * The contents of this file are subject to the terms of the
+ * Common Development and Distribution License, Version 1.0 only
+ * (the "License").  You may not use this file except in compliance
+ * with the License.
+ *
+ * You can obtain a copy of the license at usr/src/OPENSOLARIS.LICENSE
+ * or http://www.opensolaris.org/os/licensing.
+ * See the License for the specific language governing permissions
+ * and limitations under the License.
+ *
+ * When distributing Covered Code, include this CDDL HEADER in each
+ * file and include the License file at usr/src/OPENSOLARIS.LICENSE.
+ * If applicable, add the following below this CDDL HEADER, with the
+ * fields enclosed by brackets "[]" replaced with your own identifying
+ * information: Portions Copyright [yyyy] [name of copyright owner]
+ *
+ * CDDL HEADER END
+ */
 
-static char pyns1_doc[] = "NS1 Hash for Python\n";
+/*
+ * Copyright (C) 2011 Tsukasa Hamano <hamano@osstech.co.jp>
+ */
+
+#include <Python.h>
+#include "ns_internal.h"
+
+static char pyns1_doc[] = "Sun's NS1 Hash Function for Python\n";
 
 static PyObject * pyns1_evalue(PyObject *self, PyObject *args)
 {
     PyObject *ret;
-    const char *plain;
+    char *plain;
     char *crypt;
     if(!PyArg_ParseTuple(args, "s", &plain)){
         return NULL;
@@ -19,7 +46,7 @@ static PyObject * pyns1_evalue(PyObject *self, PyObject *args)
 static PyObject * pyns1_dvalue(PyObject *self, PyObject *args)
 {
     PyObject *ret;
-    const char *crypt;
+    char *crypt;
     char *plain;
     if(!PyArg_ParseTuple(args, "s", &crypt)){
         return NULL;

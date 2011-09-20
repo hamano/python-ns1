@@ -743,6 +743,7 @@ extern int	__ldap_debug_servers;
 #endif
 
 /* internal connection APIs */
+/*
 void DropConnection(ConnectionID, int);
 int __s_api_getServers(char *** servers, ns_ldap_error_t ** error);
 
@@ -757,9 +758,10 @@ char *__s_get_hostcertpath(void);
 void __s_api_free_sessionPool();
 int __s_api_requestServer(const char *request, const char *server,
 	ns_server_info_t *ret, ns_ldap_error_t **error,  const char *addrType);
-
+*/
 
 /* ************ internal sldap-api functions *********** */
+/*
 void	__ns_ldap_freeEntry(ns_ldap_entry_t *ep);
 void	__s_api_split_key_value(char *buffer, char **name, char **value);
 int	__s_api_printResult(ns_ldap_result_t *);
@@ -779,12 +781,15 @@ ns_config_t *__ns_ldap_make_config(ns_ldap_result_t *result);
 ns_auth_t  *__s_api_AuthEnumtoStruct(const EnumAuthType_t i);
 boolean_t __s_api_peruser_proc(void);
 boolean_t __s_api_nscd_proc(void);
+*/
 char	*dvalue(char *);
 char	*evalue(char *);
+/*
 ns_ldap_error_t *__s_api_make_error(int, char *);
 ns_ldap_error_t *__s_api_copy_error(ns_ldap_error_t *);
-
+*/
 /* ************ specific 'Standalone' functions ********** */
+/*
 ns_ldap_return_code __s_api_ip2hostname(char *ipaddr, char **hostname);
 struct hostent *__s_api_hostname2ip(const char *name,
 				    struct hostent *result,
@@ -804,8 +809,9 @@ ns_config_t *__s_api_create_config_door_str(char *config,
 				ns_ldap_error_t **errorp);
 
 extern void	get_environment();
-
+*/
 /* internal Param APIs */
+/*
 int		__ns_ldap_setParamValue(ns_config_t *ptr,
 			const ParamIndexType type,
 			const void *data, ns_ldap_error_t **error);
@@ -828,8 +834,9 @@ const char	*__s_api_get_configname(ParamIndexType type);
 char		*__s_api_strValue(ns_config_t *ptr, ParamIndexType i,
 			ns_strfmt_t fmt);
 void		__s_api_release_config(ns_config_t *cfg);
-
+*/
 /* internal attribute/objectclass mapping api's */
+/*
 int		 __s_api_add_map2hash(ns_config_t *config,
 				ns_hashtype_t type, ns_mapping_t *map);
 void		__s_api_destroy_hash(ns_config_t *config);
@@ -839,8 +846,9 @@ char		**__ns_ldap_mapAttributeList(const char *service,
 				const char * const *origAttrList);
 char		*__ns_ldap_mapAttribute(const char *service,
 				const char *origAttr);
-
+*/
 /* internal configuration APIs */
+/*
 void		__ns_ldap_setServer(int set);
 ns_ldap_error_t	*__ns_ldap_LoadConfiguration();
 ns_ldap_error_t	*__ns_ldap_LoadDoorInfo(LineBuf *configinfo, char *domainname,
@@ -871,8 +879,9 @@ __ns_ldap_check_all_preq(int foreground,
 		int mode_quiet,
 		ns_ldap_self_gssapi_config_t config,
 		ns_ldap_error_t **errpp);
-
+*/
 /* internal un-exposed APIs */
+/*
 ns_cred_t 	*__ns_ldap_dupAuth(const ns_cred_t *authp);
 boolean_t	__s_api_is_auth_matched(const ns_cred_t *auth1,
 		    const ns_cred_t *auth2);
@@ -899,7 +908,7 @@ int		__s_api_removeServer(const char *server);
 void		__s_api_removeBadServers(char **server);
 void		__s_api_free_server_info(ns_server_info_t *sinfo);
 void		__s_api_freeConnection(Connection *con);
-
+*/
 /* internal referrals APIs */
 int 		__s_api_toFollowReferrals(const int flags,
 			int *toFollow,
