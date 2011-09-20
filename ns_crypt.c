@@ -31,6 +31,7 @@
  * Copyright (C) 2011 Tsukasa Hamano <hamano@osstech.co.jp>
  */
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <libintl.h>
@@ -40,12 +41,10 @@
 #include <ctype.h>
 #include <syslog.h>
 #include <sys/time.h>
-#include "ns_sldap.h"
-#include "ns_internal.h"
+//#include "ns_sldap.h"
+#include "ns_crypt.h"
 /* EXPORT DELETE START */
 #include <crypt.h>
-
-#define	NS_DOMESTIC	1
 
 static	char		t1[ROTORSIZE];
 static	char		t2[ROTORSIZE];
@@ -62,7 +61,6 @@ is_cleartext(const char *pwd)
 		return (FALSE);
 	return (TRUE);
 }
-
 
 static char *
 hex2ascii(char *aString, int aLen)
