@@ -14,9 +14,11 @@ EXAMPLE
 
 LICENSE
 -------
- * ns_crypt.c CDDL
- * ns_crypt.h BSD License
  * pyns1.c    BSD License
+ * ns_crypt.h BSD License
+ * ns_crypt.c CDDL
+   This file came from:
+   http://src.opensolaris.org/source/xref/onnv/onnv-gate/usr/src/lib/libsldap/common/
 
 AUTHER
 ------
