@@ -1,0 +1,7 @@
+MANIFEST.in
+ns_cache_door.h
+ns_crypt.c
+ns_internal.h
+ns_sldap.h
+pyns1.c
+setup.py
