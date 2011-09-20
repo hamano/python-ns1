@@ -3,16 +3,20 @@ Sun's NS1 Crypt Function for Python
 
 INSTALL
 -------
-
  python setup.py build
  python setup.py install
 
 EXAMPLE
 -------
-
  >>> import ns1
  >>> print ns1.evalue('hello')
  {NS1}6e376651c1
+
+LICENSE
+-------
+ * ns_crypt.c CDDL
+ * ns_crypt.h BSD License
+ * pyns1.c    BSD License
 
 AUTHER
 ------
