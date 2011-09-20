@@ -40,7 +40,6 @@ extern "C" {
 #define	ROTORSIZE   256
 #define	MASK        0377
 #define	CRYPTMARK   "{NS1}"
-#define	NS_DOMESTIC	1
 
 typedef unsigned int uint_t;
 typedef unsigned short uint16_t;
