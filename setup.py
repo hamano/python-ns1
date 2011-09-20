@@ -4,7 +4,7 @@ from distutils.core import setup, Extension
 from os import path
 
 setup(name = "ns1",
-      version = "0.1.7",
+      version = "0.1.8",
       description = "Sun's NS1 Hash Function for Python",
       long_description = '''
 Example:
@@ -15,7 +15,7 @@ Example:
 ''',
       author = "Tsukasa Hamano <hamano@osstech.co.jp>",
       author_email = "hamano@osstech.co.jp",
-      url="",
+      url="https://github.com/hamano/python-ns1",
       download_url="http://pypi.python.org/pypi/pyns1/",
       license="CDDL",
       ext_modules = [

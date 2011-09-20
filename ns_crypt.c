@@ -34,16 +34,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <libintl.h>
-#include <locale.h>
-#include <errno.h>
-#include <unistd.h>
 #include <ctype.h>
-#include <syslog.h>
-#include <sys/time.h>
-//#include "ns_sldap.h"
 #include "ns_crypt.h"
-/* EXPORT DELETE START */
 #include <crypt.h>
 
 static	char		t1[ROTORSIZE];
@@ -51,8 +43,7 @@ static	char		t2[ROTORSIZE];
 static	char		t3[ROTORSIZE];
 static	char		hexdig[] = "0123456789abcdef";
 
-//static mutex_t		ns_crypt_lock = DEFAULTMUTEX;
-static boolean_t	crypt_inited = B_FALSE;
+static boolean_t	crypt_inited = FALSE;
 
 static int
 is_cleartext(const char *pwd)
@@ -83,7 +74,6 @@ hex2ascii(char *aString, int aLen)
 	return (res);
 }
 
-
 static int
 unhex(char c)
 {
@@ -91,7 +81,6 @@ unhex(char c)
 		: c >= 'A' && c <= 'F' ? c - 'A' + 10
 		: c - 'a' + 10);
 }
-
 
 static char *
 ascii2hex(char *anHexaStr, int *aResLen)
@@ -113,12 +102,10 @@ ascii2hex(char *anHexaStr, int *aResLen)
 	*aResLen = theLen;
 	return (theRes);
 }
-/* EXPORT DELETE END */
 
 static void
 c_setup(void)
 {
-/* EXPORT DELETE START */
 	int ic, i, k, temp;
 	unsigned random;
 	char buf[13];
@@ -156,9 +143,8 @@ c_setup(void)
 	}
 	for (i = 0; i < ROTORSIZE; i++)
 		t2[t1[i]&MASK] = i;
-	crypt_inited = B_TRUE;
+	crypt_inited = TRUE;
 }
-
 
 static char *
 modvalue(char *str, int len, int *mod_len)
@@ -187,14 +173,11 @@ modvalue(char *str, int len, int *mod_len)
 		    *mod_len = i;
 	}
 	return (s);
-/* EXPORT DELETE END */
 }
-
 
 char *
 evalue(char *ptr)
 {
-/* EXPORT DELETE START */
 	char *modv, *str, *ev;
 	int modv_len;
 	size_t len;
@@ -222,19 +205,11 @@ evalue(char *ptr)
 	free(str);
 	str = NULL;
 	return (ev);
-#ifndef NS_DOMESTIC
-/* EXPORT DELETE END */
-	return (strdup(ptr));
-/* EXPORT DELETE START */
-#endif
-/* EXPORT DELETE END */
 }
-
 
 char *
 dvalue(char *ptr)
 {
-/* EXPORT DELETE START */
 	char *modv, *str, *sb;
 	int len;
 
@@ -250,10 +225,4 @@ dvalue(char *ptr)
 	free(str);
 	str = NULL;
 	return (modv);
-#ifndef NS_DOMESTIC
-/* EXPORT DELETE END */
-	return (strdup(ptr));
-/* EXPORT DELETE START */
-#endif
-/* EXPORT DELETE END */
 }

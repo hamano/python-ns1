@@ -1,0 +1,19 @@
+Sun's NS1 Crypt Function for Python
+===================================
+
+INSTALL
+-------
+
+ python setup.py build
+ python setup.py install
+
+EXAMPLE
+-------
+
+ >>> import ns1
+ >>> print ns1.evalue('hello')
+ {NS1}6e376651c1
+
+AUTHER
+------
+Tsukasa Hamano <hamano@osstech.co.jp>

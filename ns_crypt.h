@@ -34,14 +34,12 @@
 extern "C" {
 #endif
 
-#define	TRUE			1
-#define	FALSE			0
-#define	ROTORSIZE		256
-#define	MASK			0377
-#define	CRYPTMARK		"{NS1}"
+#define	TRUE        1
+#define	FALSE       0
+#define	ROTORSIZE   256
+#define	MASK        0377
+#define	CRYPTMARK   "{NS1}"
 #define	NS_DOMESTIC	1
-#define B_FALSE 0
-#define B_TRUE 1
 
 typedef unsigned int uint_t;
 typedef unsigned short uint16_t;

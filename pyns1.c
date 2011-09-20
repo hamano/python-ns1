@@ -25,7 +25,7 @@
  */
 
 #include <Python.h>
-#include "ns_internal.h"
+#include "ns_crypt.h"
 
 static char pyns1_doc[] = "Sun's NS1 Hash Function for Python\n";
 
